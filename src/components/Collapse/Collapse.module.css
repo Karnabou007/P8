@@ -1,0 +1,135 @@
+/* Collapse */
+.collapse {
+    width: 47%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: box-shadow 600ms;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.471);
+}
+
+/* Collapse fermée */
+.collapse[animation="0"] {
+    box-shadow: none;
+    transition: box-shadow 600ms;
+}
+
+/* Texte de la Collapse ouverte */
+.containerText {
+    padding: 40px 35px 17px 35px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;
+    height: 100%;
+}
+
+/* Mode dark */
+.dark .containerText {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+}
+
+/* Bouton d'ouverture de la collapse */
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(248, 228, 232);
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: all 400ms;
+    margin-bottom: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.471);
+    transition: box-shadow 600ms;
+}
+
+.button:hover, .button:focus, .button:active {
+    background-color: rgb(225, 247, 225);
+    transition: all 400ms;
+}
+
+/* Bouton lorsque la collapse est ouverte */
+.collapse[animation="1"] > .button {
+    box-shadow: none;
+    transition: box-shadow 600ms;
+}
+
+/* Titre présent dans le bouton */
+.title {
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-right: 15px;
+}
+
+/* Animations à l'ouverture de la collapse */
+.collapse[animation="1"] > .containerText {
+    animation: open 600ms;
+}
+
+.icone[animation="1"] {
+    transform: rotate(-180deg);
+    transition: transform 600ms;
+}
+
+/* Animations à la fermeture de la collapse */
+.collapse[animation="0"] > .containerText {
+    animation: close 600ms ease-in-out;
+}
+
+.icone[animation="0"] {
+    transform: rotate(0deg);
+    transition: transform 600ms;
+}
+
+/* Mode mobile */
+@media (max-width: 576px) {
+    .collapse {
+        width: 100%;
+    }
+    
+    .button {
+        height: 40px;
+    }
+    
+    .title {
+        font-size: 1.1em;
+    }
+    
+    .containerText {
+        padding: 25px 20px 10px 20px;
+        height: 100%;
+    }
+}
+
+/* Animations */
+@keyframes open {
+    0% {
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        max-height: 400px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes close {
+    0% {
+        opacity: 1;
+        max-height: 400px;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-70px);
+    }
+}

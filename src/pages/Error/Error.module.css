@@ -1,0 +1,42 @@
+.main {
+    text-align: center;
+}
+
+/* Bloc 404 */
+.error {
+    font-size: 9em;
+    font-weight: 500;
+    font-family: 'Lobster Two';
+    margin: 0;
+}
+
+.text {
+    font-size: 1.5em;
+    padding-bottom: 10vh;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+/* Icône flèche avant lien retour accueil */
+.icone {
+    margin-right: 15px;
+}
+
+/* Mode mobile */
+@media (max-width: 576px) {
+    .error {
+        font-size: 6em;
+    }
+    
+    .text {
+        font-size: 1.1em;
+        font-weight: 400;
+        padding-bottom: 60px;
+    }
+
+    .link {
+        font-size: 1em;
+    }
+}

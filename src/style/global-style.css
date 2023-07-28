@@ -1,0 +1,134 @@
+/* Balises générales */
+* {
+    font-family: 'Quicksand';
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.active {
+    font-weight: 700;
+}
+
+strong {
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    margin: auto;
+    font-weight: 400;
+}
+
+main {
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    animation: opacityAnimation 1s ease-in-out 50ms both;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Style de la page (le footer reste toujours en bas de fenêtre) */
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1900px;
+    min-height: 100vh;
+    background-image: url(../assets/images/floral-background.jpg);
+    overflow: hidden;
+    margin: auto;
+    background-size: cover;
+}
+
+/* Modification du style en mode dark */
+#root.dark {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../assets/images/floral-background.jpg);
+}
+
+/* Icône de retour en haut de page */
+.iconeBack {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    margin-left: -32px;
+    z-index: 99;
+    width: fit-content;
+    opacity: 1;
+    animation: opacityAnimation 600ms;
+}
+
+.iconeBack:hover, .iconeBack:focus, .iconeBack:active {
+    color: rgba(0, 0, 0, 0.9);
+    transition: color 400ms;
+}
+
+/* Bouton switch permettant de passer en mode dark/light */
+.ant-switch {
+    background-color: grey !important;
+ }
+
+ .ant-switch:hover, .ant-switch:focus, .ant-switch:active {
+    background-color: rgba(128, 128, 128, 0.8) !important;
+ }
+
+ .ant-switch-checked {
+    background-color: rgb(0, 0, 0) !important;
+ }
+
+ .ant-switch-checked:hover, .ant-switch-checked:focus, .ant-switch-checked:active {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+ }
+
+/* Pour l'accessibilité */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mode mobile */
+@media (max-width: 576px) {
+    main {
+        margin: 20px 10px;
+    }
+
+    .iconeBack {
+        bottom: 95px;
+    }
+}
+
+/* Animations */
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

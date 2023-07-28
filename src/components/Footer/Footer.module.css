@@ -1,0 +1,72 @@
+.footer {
+    background-color: rgb(248, 228, 232);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    border-top: 1px rgba(0, 0, 0, 0.472) solid;
+}
+
+/* Mode dark */
+.footer.dark {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+/* Partie gauche */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    width: 35%;
+}
+
+/* Partie droite, conteneur de liens */
+.links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 35%;
+}
+
+/* Liens */
+.socialNetworks {
+    width: 32px;
+}
+
+.socialNetworks:hover, .socialNetworks:focus, .socialNetworks:active {
+    opacity: 0.7;
+}
+
+/* Style */
+.italic {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Mode mobile */
+@media (max-width: 576px) {
+    .footer {
+        padding: 15px;
+        justify-content: space-between;
+        border-radius: 0;
+        margin-top: 20px;
+    }
+    
+    .links {
+        flex-wrap: wrap;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .socialNetworks {
+        width: 30%;
+    }
+    
+    .italic {
+        font-style: italic;
+        font-size: 0.9em;
+    }
+}
