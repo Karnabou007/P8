@@ -2,7 +2,7 @@
 
 Création d'un site portfolio pour gagner en visibilité.
 
-![Portfolio](/src/assets/images/readme.png)
+
 ## Contraintes du projet
 
 - Présenter votre profil de développeur : la ou les formation(s) suivie(s) et vos compétences.
